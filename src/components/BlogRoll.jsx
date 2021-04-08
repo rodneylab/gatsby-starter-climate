@@ -31,7 +31,9 @@ export const PureBlogRoll = ({ data, initialPosts }) => {
       {showPosts < totalCount ? (
         <>
           <button type="submit" onClick={() => setShowPosts(showPosts + initialPosts)}>
-            See more {H_ELLIPSIS_ENTITY}
+            See more
+            {' '}
+            {H_ELLIPSIS_ENTITY}
           </button>
         </>
       ) : null}

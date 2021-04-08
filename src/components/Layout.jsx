@@ -22,10 +22,12 @@ import {
   GithubIcon,
   LinkedinIcon,
   TwitterIcon,
-} from '../components/Icons';
+} from './Icons';
 
 const FooterIcons = ({
-  siteMetadata: { facebookPage, githubPage, linkedinProfile, twitterUsername },
+  siteMetadata: {
+    facebookPage, githubPage, linkedinProfile, twitterUsername,
+  },
 }) => (
   <div className={footerIcons}>
     <ul>
@@ -87,7 +89,8 @@ const RodneyLabCredit = () => (
       fontFamily: 'Lato',
     }}
   >
-    A project by{' '}
+    A project by
+    {' '}
     <span style={{ display: 'flex', alignItems: 'center' }}>
       <a
         aria-label="Open Rodney Lab site"
@@ -106,7 +109,8 @@ const RodneyLabCredit = () => (
             background: '#ffffff',
           }}
         />
-      </a>{' '}
+      </a>
+      {' '}
       <a aria-label="Open Rodney Lab site" href="https://rodneylab.com" rel="noopener">
         <span style={{ fontWeight: 300 }}>RODNEY LAB</span>
       </a>
@@ -145,11 +149,13 @@ export const PureLayout = ({ children, data: { site } }) => {
       <main className={mainContainer}>{children}</main>
       <footer className={footerContainer}>
         <div>
-          Created by{' '}
+          Created by
+          {' '}
           <a aria-label="Open Rodney Lab Site" href="https://rodneylab.com" rel="noopener">
             Rodney Lab
           </a>
-          .{` Copyright ${COPYRIGHT_ENTITY} ${copyrightYear}.`}
+          .
+          {` Copyright ${COPYRIGHT_ENTITY} ${copyrightYear}.`}
         </div>
         <FooterIcons siteMetadata={siteMetadata} />
         <RodneyLabCredit />

@@ -79,19 +79,18 @@ $line-height-normal: 1.5;
 $line-height-relaxed: 1.75;
 
 // Colours
-$color-theme-1: #d62828;
-$color-theme-2: #5cc8ff;
-$color-theme-3: #fff275;
-$color-theme-4: #1b4079;
+$color-theme-1: #d62828; // maximum red
+$color-theme-2: #5cc8ff; // maya blue
+$color-theme-3: #fff275; // corn
+$color-theme-4: #1b4079;// dark cornflower blue
 
 $color-primary: #005b99;
-$color-text: #0d1821;
-$color-text-light: #4f5969;
+$color-text: #0d1821; // rich black FOGRA 29
 $color-heading: $color-theme-4;
 $color-heading-black: $color-theme-4;
-$color-accent: #fdfffc;
-$color-success: #3d8f1c;
-$color-danger: #8f351c;
+$color-accent: #fdfffc; // baby powder
+$color-success: #2ec4b6; // tiffany blue
+$color-danger: #e71d36; // rose madder
 
 /* HTML elements */
 *,
@@ -216,7 +215,7 @@ li > ul {
 }
 
 blockquote {
-  color: $color-text-light;
+  color: $color-theme-4;
   margin-left: calc(#{-1 + $spacing-6});
   margin-right: $spacing-8;
   padding: $spacing-0 $spacing-0 $spacing-0 $spacing-6;

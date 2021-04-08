@@ -16,7 +16,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'react', 'jsx-a1y',
+    'react', 'jsx-a11y',
   ],
   rules: {
   },

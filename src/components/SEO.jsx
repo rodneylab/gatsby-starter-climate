@@ -13,6 +13,18 @@ export const PureSEO = ({ data, title }) => {
   return <Helmet title={getPageTitle()} htmlAttributes={{ lang: siteLanguage }} />;
 };
 
+PureSEO.propTypes = {
+  title: PropTypes.string.isRequired,
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        siteLanguage: PropTypes.string,
+        siteTitle: PropTypes.string,
+      }),
+    }),
+  }).isRequired,
+};
+
 export const seoQuery = graphql`
   fragment SEOFragment on Site {
     siteMetadata {
@@ -35,4 +47,4 @@ const SEO = () => {
   return <PureSEO data={data} />;
 };
 
-export { PureSEO as default };
+export { SEO as default };

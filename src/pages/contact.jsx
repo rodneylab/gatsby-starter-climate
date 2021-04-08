@@ -7,7 +7,9 @@ import Card from '../components/Card';
 import { contactAddress, contactDetails } from './contact.module.scss';
 import { PureLayout as Layout } from '../components/Layout';
 import { PureSEO as SEO } from '../components/SEO';
-import { EmailIcon, FacebookIcon, TelegramIcon, TwitterIcon, WireIcon } from '../components/Icons';
+import {
+  EmailIcon, FacebookIcon, TelegramIcon, TwitterIcon, WireIcon,
+} from '../components/Icons';
 import { ExternalLink, TwitterMessageLink } from '../components/Link';
 
 export default function Contact({ data }) {
@@ -43,7 +45,8 @@ export default function Contact({ data }) {
                 </ExternalLink>
               </li>
               <li>
-                <TwitterIcon />{' '}
+                <TwitterIcon />
+                {' '}
                 <TwitterMessageLink twitterUserId={twitterUserId}>
                   <span className={contactAddress}>{twitterUsername}</span>
                 </TwitterMessageLink>
@@ -75,8 +78,11 @@ Contact.propTypes = {
       buildTime: PropTypes.string,
       siteMetadata: PropTypes.shape({
         contactEmailAddress: PropTypes.string,
+        facebookPageName: PropTypes.string,
+        telegramUsername: PropTypes.string,
         twitterUserId: PropTypes.string,
         twitterUsername: PropTypes.string,
+        wireUsername: PropTypes.string,
       }),
     }),
   }).isRequired,

@@ -20,7 +20,7 @@ export default function Home({ data }) {
             <h2>About me</h2>
             <p>
               I live and breathe analogue photography. I show you my favourite analogue film cameras
-              on this site. Hopefully if you are not into analogue photgraphy yet, some of my
+              on this site. Hopefully if you are not into analogue photography yet, some of my
               enthusiasm will rub off onto you.
             </p>
           </Card>

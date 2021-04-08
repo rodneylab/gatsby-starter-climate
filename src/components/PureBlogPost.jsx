@@ -5,11 +5,13 @@ import { MDXProvider } from '@mdx-js/react';
 import PropTypes from 'prop-types';
 
 import { ExternalLink, TwitterMessageLink } from './Link';
+import Heading from './Heading';
 import { PureLayout as Layout } from './Layout';
 import { PureSEO as SEO } from './SEO';
 
 const shortcodes = {
   ExternalLink,
+  Heading,
   Link,
   TwitterMessageLink,
 };
@@ -24,7 +26,8 @@ const PureBlogPost = ({ children, data }) => {
       <SEO data={data} title={postTitle} />
       <Helmet>
         <link rel="canonical" href={`${siteUrl}/${slug}`} />
-      </Helmet>{' '}
+      </Helmet>
+      {' '}
       <Layout data={data}>
         <article>
           <h1>{postTitle}</h1>
@@ -39,7 +42,13 @@ const PureBlogPost = ({ children, data }) => {
 
 PureBlogPost.propTypes = {
   data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        siteUrl: PropTypes.string,
+      }),
+    }),
     post: PropTypes.shape({
+      slug: PropTypes.string,
       frontmatter: PropTypes.shape({
         postTitle: PropTypes.string,
       }),
