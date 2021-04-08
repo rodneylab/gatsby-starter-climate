@@ -6,6 +6,7 @@
 
 const path = require('path');
 
+postCssPlugins = require('./postcss-config.js');
 const website = require('./config/website');
 
 module.exports = {
@@ -26,6 +27,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        postCssPlugins: [...postCssPlugins],
+        sassOptions: {
+          precision: 4,
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-csp',
       options: {
         disableOnDev: true,
@@ -45,7 +55,8 @@ module.exports = {
           'frame-ancestors': "'self'",
           'frame-src':
             "'self' https://www.facebook.com https://www.google.com/recaptcha/api2/anchor https://www.google.com/recaptcha/api2/bframe https://www.youtube-nocookie.com/embed/",
-          'img-src': "'self' data: www.google-analytics.com https://www.facebook.com https://webmention.io/avatar/pbs.twimg.com/",
+          'img-src':
+            "'self' data: www.google-analytics.com https://www.facebook.com https://webmention.io/avatar/pbs.twimg.com/",
           'manifest-src': "'self'",
           'media-src': "'self' data:",
           'object-src': "'none'",
@@ -78,8 +89,29 @@ module.exports = {
       },
     },
     'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaults: {
+          placeholder: 'tracedSVG',
+          formats: ['auto', 'webp', 'avif'],
+          quality: 100,
+          avifOptions: { lossless: true, quality: 100, speed: 0 },
+          jpgOptions: { quality: 100, progressive: true },
+          pngOptions: { quality: 100, compressionSpeed: 1 },
+          webpOptions: { quality: 100 },
+          tracedSVGOptions: {
+            color: '#032539',
+            background: '#1c768f',
+          },
+        },
+        defaultQuality: 100,
+        stripMetadata: false,
+        useMozJpeg: true,
+      },
+    },
     'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
