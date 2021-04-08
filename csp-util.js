@@ -136,7 +136,7 @@ function updateNetlifyHeaderFile(cspText, outputFile) {
 
   const replacementOptions = {
     files: outputFile,
-    from: new RegExp(__REPLACE_ME__, 'g'),
+    from: new RegExp('__REPLACE_ME__', 'g'),
     to: modifiedCspText,
   };
 
