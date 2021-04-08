@@ -5,13 +5,11 @@ import { MDXProvider } from '@mdx-js/react';
 import PropTypes from 'prop-types';
 
 import { ExternalLink, TwitterMessageLink } from './Link';
-import Heading from './Heading';
 import { PureLayout as Layout } from './Layout';
 import { PureSEO as SEO } from './SEO';
 
 const shortcodes = {
   ExternalLink,
-  Heading,
   Link,
   TwitterMessageLink,
 };
