@@ -89,15 +89,15 @@ A quick look at the top-level files and directories you'll see in a Gatsby 3 pro
 
 7.  **`gatsby-browser.js`**: This file is where Gatsby 3 expects to find any usage of the [Gatsby 3 browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customisation/extension of default Gatsby settings affecting the browser.
 
-8.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby 3 plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).  To improve security, fairly strict security header parameters are set.  **You will almost certainly need to tweak these for your own use case.** . For help use the following resources:
+8.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby 3 plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).  To improve security, fairly strict security header parameters are set.  **You will almost certainly need to tweak these for your own use case**. For help use the following resources:
 
     - <a aria-label="See security heading ratings and tips" href="https://securityheaders.com/" target="_blank" rel="nofollow noopener noreferrer">securityheaders.com</a>
     - <a aria-label="See security heading tips" href="https://csper.io/"  target="_blank" rel="nofollow noopener noreferrer">csper.io</a>
     - <a aria-label="Open the Google C S P evaluator tool" href="https://csp-evaluator.withgoogle.com/" target="_blank" rel="nofollow noopener noreferrer">csp-evaluator.withgoogle.com</a>
 
-9.  **`gatsby-node.js`**: This file is where Gatsby 3 expects to find any usage of the [Gatsby 3 Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customisation/extension of default Gatsby settings affecting pieces of the site build process.
+9.  **`gatsby-node.js`**: This file is where Gatsby 3 expects to find any usage of the [Gatsby 3 Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customisation/extension of default Gatsby 3 settings affecting pieces of the site build process.
 
-10.  **`gatsby-ssr.js`**: This file is where Gatsby 3 expects to find any usage of the [Gatsby 3 server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customisation of default Gatsby settings affecting server-side rendering.
+10.  **`gatsby-ssr.js`**: This file is where Gatsby 3 expects to find any usage of the [Gatsby 3&nbsp;server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customisation of default Gatsby 3 settings affecting server-side rendering.
 
 11.  **`LICENSE`**: This Gatsby 3 starter is licensed under the BSD-3-Clause license.
 
