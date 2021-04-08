@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  environment = { GATSBY_CPU_COUNT = "1" }
+  functions = "netlify/functions"
+  publish = "public"
+
+[dev]
+  command = "gatsby develop"
+
+[[plugins]]
+  package = "netlify-plugin-gatsby-cache"

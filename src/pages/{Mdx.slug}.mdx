@@ -1,0 +1,29 @@
+import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+
+<MDXRenderer>{props.data.post.body}</MDXRenderer>
+
+export const pageQuery = graphql`
+query blogPostTemplateQuery($slug: String!) {
+  site {
+    ...LayoutFragment
+    ...SEOFragment
+    siteMetadata {
+      siteUrl
+    }
+  }
+  post: mdx(slug: {eq: $slug}) {
+    id
+    slug
+    body
+    excerpt
+    rawBody
+    frontmatter {
+      datePublished(formatString: "YYYY-MM-DDTHH:mm:ssZ")
+      lastUpdated(formatString: "YYYY-MM-DDTHH:mm:ssZ")
+      postTitle
+      seoMetaDescription
+    }
+  }
+}
+`;

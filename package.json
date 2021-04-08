@@ -1,0 +1,62 @@
+{
+  "name": "gatsby-starter-climate",
+  "private": true,
+  "description": "A lightweight starter for a fast mdx gatsby blog site",
+  "version": "0.1.0",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "build": "gatsby build && node ./csp-util.js",
+    "cypress:open": "cypress open",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "dayjs": "^1.10.4",
+    "gatsby": "^3.2.1",
+    "gatsby-plugin-csp": "^1.1.3",
+    "gatsby-plugin-image": "^1.2.1",
+    "gatsby-plugin-mdx": "^2.2.0",
+    "gatsby-plugin-netlify": "^3.2.0",
+    "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-plugin-sharp": "^3.2.1",
+    "gatsby-source-filesystem": "^3.2.0",
+    "gatsby-transformer-sharp": "^3.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@testing-library/cypress": "^7.0.5",
+    "cypress": "^7.0.1",
+    "cypress-axe": "^0.12.2",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^6.0.0",
+    "prettier": "2.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodneylab/gatsby-starter-climate"
+  },
+  "bugs": {
+    "url": "https://github.com/rodneylab/gatsby-starter-climate/issues"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
