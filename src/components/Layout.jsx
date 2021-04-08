@@ -6,11 +6,10 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import { COPYRIGHT_ENTITY } from '../constants/entities';
 import { ExternalLink } from './Link';
+import { CameraIcon, FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '../components/Icons';
 
 const FooterIcons = ({
-  siteMetadata: {
-    facebookPage, githubPage, linkedinProfile, twitterUsername,
-  },
+  siteMetadata: { facebookPage, githubPage, linkedinProfile, twitterUsername },
 }) => (
   <>
     <ExternalLink
@@ -18,28 +17,28 @@ const FooterIcons = ({
       href={facebookPage}
       showExternalIcon={false}
     >
-      f
+      <FacebookIcon />
     </ExternalLink>
     <ExternalLink
       aria-label="Go to the Rodney Lab Twitter page"
       href={`https://twitter.com/intent/user?screen_name=${twitterUsername.slice(1)}`}
       showExternalIcon={false}
     >
-      t
+      <TwitterIcon />
     </ExternalLink>
     <ExternalLink
       aria-label="Go to the Rodney Lab LinkedIn page"
       href={`https://uk.linkedin.com/in/${linkedinProfile}`}
       showExternalIcon={false}
     >
-      l
+      <LinkedinIcon />
     </ExternalLink>
     <ExternalLink
       aria-label="Go to the Rodney Lab GitHub page"
       href={`https://github.com/${githubPage}`}
       showExternalIcon={false}
     >
-      g
+      <GithubIcon />
     </ExternalLink>
   </>
 );
@@ -62,8 +61,7 @@ const RodneyLabCredit = () => (
       fontFamily: 'Lato',
     }}
   >
-    A project by
-    {' '}
+    A project by{' '}
     <span style={{ display: 'flex', alignItems: 'center' }}>
       <a
         aria-label="Open Rodney Lab site"
@@ -82,8 +80,7 @@ const RodneyLabCredit = () => (
             background: '#ffffff',
           }}
         />
-      </a>
-      {' '}
+      </a>{' '}
       <a aria-label="Open Rodney Lab site" href="https://rodneylab.com" rel="noopener">
         <span style={{ fontWeight: 300 }}>RODNEY LAB</span>
       </a>
@@ -100,7 +97,7 @@ export const PureLayout = ({ children, data: { site } }) => {
     <>
       <header>
         <Link aria-label="Jump to home page" to="/">
-          Home
+          <CameraIcon />
         </Link>
         <nav>
           <ul>
@@ -119,13 +116,11 @@ export const PureLayout = ({ children, data: { site } }) => {
       </header>
       {children}
       <footer>
-        Created by
-        {' '}
+        Created by{' '}
         <a aria-label="Open Rodney Lab Site" href="https://rodneylab.com" rel="noopener">
           Rodney Lab
         </a>
-        .
-        {` Copyright ${COPYRIGHT_ENTITY} ${copyrightYear}.`}
+        .{` Copyright ${COPYRIGHT_ENTITY} ${copyrightYear}.`}
         <RodneyLabCredit />
         <FooterIcons siteMetadata={siteMetadata} />
       </footer>

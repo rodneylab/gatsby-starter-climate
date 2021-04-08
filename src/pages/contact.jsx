@@ -5,10 +5,18 @@ import PropTypes from 'prop-types';
 
 import { PureLayout as Layout } from '../components/Layout';
 import { PureSEO as SEO } from '../components/SEO';
+import { EmailIcon, FacebookIcon, TelegramIcon, TwitterIcon, WireIcon } from '../components/Icons';
 import { TwitterMessageLink } from '../components/Link';
 
 export default function Contact({ data }) {
-  const { contactEmailAddress, twitterUserId, twitterUsername } = data.site.siteMetadata;
+  const {
+    contactEmailAddress,
+    facebookPageName,
+    telegramUsername,
+    twitterUserId,
+    twitterUsername,
+    wireUsername,
+  } = data.site.siteMetadata;
 
   return (
     <>
@@ -18,12 +26,23 @@ export default function Contact({ data }) {
           <h1>Contact me</h1>
           <p>I would love to hear from you. Please get in touch!</p>
           <ul>
-            <li>email: {contactEmailAddress}</li>
             <li>
-              twitter:{' '}
+              <EmailIcon /> {contactEmailAddress}
+            </li>
+            <li>
+              <FacebookIcon /> {facebookPageName}
+            </li>
+            <li>
+              <TwitterIcon />{' '}
               <TwitterMessageLink twitterUserId={twitterUserId}>
                 {twitterUsername}
               </TwitterMessageLink>
+            </li>
+            <li>
+              <TelegramIcon />{' '}{telegramUsername}
+            </li>
+            <li>
+              <WireIcon />{' '}{wireUsername}
             </li>
           </ul>
         </main>
@@ -52,8 +71,11 @@ export const query = graphql`
       ...SEOFragment
       siteMetadata {
         contactEmailAddress
+        facebookPageName
+        telegramUsername
         twitterUserId
         twitterUsername
+        wireUsername
       }
     }
   }

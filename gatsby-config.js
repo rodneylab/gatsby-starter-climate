@@ -16,6 +16,7 @@ module.exports = {
 
     contactEmailAddress: website.contactEmailAddress,
     facebookPage: `https://www.facebook.com/${website.facebookPage}`,
+    facebookPageName: website.facebookPage,
     githubPage: website.githubPage,
     linkedinProfile: website.linkedinProfile,
     telegramUsername: website.telegramUsername,
