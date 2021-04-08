@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { ExternalLinkIcon } from './Icons';
+
 export const ExternalLink = ({
   children,
   href,
@@ -11,7 +13,12 @@ export const ExternalLink = ({
 }) => (
   <a aria-label={ariaLabel} href={href} target={target} rel={rel}>
     {children}
-    {target === '_blank' && showExternalIcon ? <>{' '}external link icon</> : null}
+    {target === '_blank' && showExternalIcon ? (
+      <>
+        {' '}
+        <ExternalLinkIcon />
+      </>
+    ) : null}
   </a>
 );
 

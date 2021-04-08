@@ -4,43 +4,69 @@ import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { StaticImage } from 'gatsby-plugin-image';
 
+import {
+  container,
+  footerContainer,
+  footerIcons,
+  headerContainer,
+  logo,
+  mainContainer,
+  nav,
+} from './Layout.module.scss';
+
 import { COPYRIGHT_ENTITY } from '../constants/entities';
 import { ExternalLink } from './Link';
-import { CameraIcon, FacebookIcon, GithubIcon, LinkedinIcon, TwitterIcon } from '../components/Icons';
+import {
+  CameraIcon,
+  FacebookIcon,
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from '../components/Icons';
 
 const FooterIcons = ({
   siteMetadata: { facebookPage, githubPage, linkedinProfile, twitterUsername },
 }) => (
-  <>
-    <ExternalLink
-      aria-label="Go to the Rodney Lab Facebook page"
-      href={facebookPage}
-      showExternalIcon={false}
-    >
-      <FacebookIcon />
-    </ExternalLink>
-    <ExternalLink
-      aria-label="Go to the Rodney Lab Twitter page"
-      href={`https://twitter.com/intent/user?screen_name=${twitterUsername.slice(1)}`}
-      showExternalIcon={false}
-    >
-      <TwitterIcon />
-    </ExternalLink>
-    <ExternalLink
-      aria-label="Go to the Rodney Lab LinkedIn page"
-      href={`https://uk.linkedin.com/in/${linkedinProfile}`}
-      showExternalIcon={false}
-    >
-      <LinkedinIcon />
-    </ExternalLink>
-    <ExternalLink
-      aria-label="Go to the Rodney Lab GitHub page"
-      href={`https://github.com/${githubPage}`}
-      showExternalIcon={false}
-    >
-      <GithubIcon />
-    </ExternalLink>
-  </>
+  <div className={footerIcons}>
+    <ul>
+      <li>
+        <ExternalLink
+          aria-label="Go to the Rodney Lab Facebook page"
+          href={facebookPage}
+          showExternalIcon={false}
+        >
+          <FacebookIcon />
+        </ExternalLink>
+      </li>
+      <li>
+        <ExternalLink
+          aria-label="Go to the Rodney Lab Twitter page"
+          href={`https://twitter.com/intent/user?screen_name=${twitterUsername.slice(1)}`}
+          showExternalIcon={false}
+        >
+          <TwitterIcon />
+        </ExternalLink>
+      </li>
+      <li>
+        <ExternalLink
+          aria-label="Go to the Rodney Lab LinkedIn page"
+          href={`https://uk.linkedin.com/in/${linkedinProfile}`}
+          showExternalIcon={false}
+        >
+          <LinkedinIcon />
+        </ExternalLink>
+      </li>
+      <li>
+        <ExternalLink
+          aria-label="Go to the Rodney Lab GitHub page"
+          href={`https://github.com/${githubPage}`}
+          showExternalIcon={false}
+        >
+          <GithubIcon />
+        </ExternalLink>
+      </li>
+    </ul>
+  </div>
 );
 
 FooterIcons.propTypes = {
@@ -94,12 +120,14 @@ export const PureLayout = ({ children, data: { site } }) => {
   const copyrightYear = dayjs(buildTime).format('YYYY');
 
   return (
-    <>
-      <header>
+    <div className={container}>
+      <header className={headerContainer}>
         <Link aria-label="Jump to home page" to="/">
-          <CameraIcon />
+          <span className={logo}>
+            <CameraIcon />
+          </span>
         </Link>
-        <nav>
+        <nav className={nav}>
           <ul>
             <li>
               <Link aria-label="Jump to home page" to="/">
@@ -114,17 +142,19 @@ export const PureLayout = ({ children, data: { site } }) => {
           </ul>
         </nav>
       </header>
-      {children}
-      <footer>
-        Created by{' '}
-        <a aria-label="Open Rodney Lab Site" href="https://rodneylab.com" rel="noopener">
-          Rodney Lab
-        </a>
-        .{` Copyright ${COPYRIGHT_ENTITY} ${copyrightYear}.`}
-        <RodneyLabCredit />
+      <main className={mainContainer}>{children}</main>
+      <footer className={footerContainer}>
+        <div>
+          Created by{' '}
+          <a aria-label="Open Rodney Lab Site" href="https://rodneylab.com" rel="noopener">
+            Rodney Lab
+          </a>
+          .{` Copyright ${COPYRIGHT_ENTITY} ${copyrightYear}.`}
+        </div>
         <FooterIcons siteMetadata={siteMetadata} />
+        <RodneyLabCredit />
       </footer>
-    </>
+    </div>
   );
 };
 

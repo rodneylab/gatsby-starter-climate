@@ -4,6 +4,8 @@ import { graphql, Link, navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 import { H_ELLIPSIS_ENTITY } from '../constants/entities';
 
+import { container, content } from './BlogPostSummary.module.scss';
+
 const BlogPostSummary = ({
   frontmatter: { datePublished, postTitle, seoMetaDescription },
   slug,
@@ -32,23 +34,23 @@ const BlogPostSummary = ({
   const idString = `blog-post-summary-${slug.slice(0, -1)}`;
 
   return (
-    <div ref={containerNode}>
-      <h3 ref={titleNode}>
-        <Link
-          aria-label={`Open ${postTitle} blog post`}
-          aria-describedby={idString}
-          to={`/${slug}`}
-        >
-          {postTitle}
-        </Link>
-      </h3>
-      <p>{`${date.format('D')} ${date.format('MMM')}`}</p>
-      <p>{seoMetaDescription}</p>
-      <span aria-hidden id={idString}>
-        Read more
-        {' '}
-        {H_ELLIPSIS_ENTITY}
-      </span>
+    <div className={container} ref={containerNode}>
+      <div className={content}>
+        <h3 ref={titleNode}>
+          <Link
+            aria-label={`Open ${postTitle} blog post`}
+            aria-describedby={idString}
+            to={`/${slug}`}
+          >
+            {postTitle}
+          </Link>
+        </h3>
+        <p>{`${date.format('D')} ${date.format('MMM')}`}</p>
+        <p>{seoMetaDescription}</p>
+        <span aria-hidden id={idString}>
+          Read more {H_ELLIPSIS_ENTITY}
+        </span>
+      </div>
     </div>
   );
 };

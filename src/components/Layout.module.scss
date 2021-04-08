@@ -1,0 +1,79 @@
+@import '../styles/styles.scss';
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $spacing-4 $spacing-0 $spacing-0;
+  margin: $spacing-0 auto;
+  min-height: 100vh;
+}
+
+.header-container {
+  display: flex;
+  align-items: flex-end;
+  max-width: $max-width-wrapper;
+  width: 100%;
+  margin: $spacing-0 auto $spacing-12;
+}
+
+.nav {
+  display: flex;
+  margin-left: auto;
+  list-style-type: none;
+
+  ul {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 0;
+    margin-bottom: $spacing-0;
+
+    li {
+      display: flex;
+      font-size: $font-size-4;
+      margin-left: $spacing-6;
+      margin-bottom: $spacing-1;
+    }
+  }
+}
+
+.logo {
+  color: $color-theme-1;
+}
+
+.main-container {
+  max-width: $max-width-wrapper;
+  width: 100%;
+  margin: $spacing-0 auto;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: $max-width-wrapper;
+  margin: $spacing-12 auto $spacing-0;
+  width: 100%;
+}
+
+.footer-icons {
+  display: flex;
+  list-style-type: none;
+
+  ul {
+    display: flex;
+    margin: $spacing-6 $spacing-0;
+
+    li {
+      display: flex;
+      margin: $spacing-0 $spacing-4 $spacing-0 $spacing-0;
+    }
+  }
+}
+
+@media screen and (max-width: $desktop-breakpoint) {
+  .container {
+    margin: $spacing-0 $spacing-4;
+  }
+}

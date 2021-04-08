@@ -3,10 +3,12 @@ import { graphql } from 'gatsby';
 
 import PropTypes from 'prop-types';
 
+import Card from '../components/Card';
+import { contactAddress, contactDetails } from './contact.module.scss';
 import { PureLayout as Layout } from '../components/Layout';
 import { PureSEO as SEO } from '../components/SEO';
 import { EmailIcon, FacebookIcon, TelegramIcon, TwitterIcon, WireIcon } from '../components/Icons';
-import { TwitterMessageLink } from '../components/Link';
+import { ExternalLink, TwitterMessageLink } from '../components/Link';
 
 export default function Contact({ data }) {
   const {
@@ -22,30 +24,46 @@ export default function Contact({ data }) {
     <>
       <SEO data={data} title="Contact" />
       <Layout data={data}>
-        <main>
+        <Card>
           <h1>Contact me</h1>
           <p>I would love to hear from you. Please get in touch!</p>
-          <ul>
-            <li>
-              <EmailIcon /> {contactEmailAddress}
-            </li>
-            <li>
-              <FacebookIcon /> {facebookPageName}
-            </li>
-            <li>
-              <TwitterIcon />{' '}
-              <TwitterMessageLink twitterUserId={twitterUserId}>
-                {twitterUsername}
-              </TwitterMessageLink>
-            </li>
-            <li>
-              <TelegramIcon />{' '}{telegramUsername}
-            </li>
-            <li>
-              <WireIcon />{' '}{wireUsername}
-            </li>
-          </ul>
-        </main>
+          <div className={contactDetails}>
+            <ul>
+              <li>
+                <EmailIcon />
+                <span className={contactAddress}>{contactEmailAddress}</span>
+              </li>
+              <li>
+                <FacebookIcon />
+                <ExternalLink
+                  aria-label="DM Rodney Lab on Facebook Messenger"
+                  href={`https://m.me/${facebookPageName}`}
+                >
+                  <span className={contactAddress}>{facebookPageName}</span>
+                </ExternalLink>
+              </li>
+              <li>
+                <TwitterIcon />{' '}
+                <TwitterMessageLink twitterUserId={twitterUserId}>
+                  <span className={contactAddress}>{twitterUsername}</span>
+                </TwitterMessageLink>
+              </li>
+              <li>
+                <TelegramIcon />
+                <ExternalLink
+                  aria-label="Message Rodney Lab on Telegram"
+                  href={`https://t.me/${telegramUsername}`}
+                >
+                  <span className={contactAddress}>{telegramUsername}</span>
+                </ExternalLink>
+              </li>
+              <li>
+                <WireIcon />
+                <span className={contactAddress}>{wireUsername}</span>
+              </li>
+            </ul>
+          </div>
+        </Card>
       </Layout>
     </>
   );

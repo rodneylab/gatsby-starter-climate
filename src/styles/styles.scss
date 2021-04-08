@@ -79,19 +79,19 @@ $line-height-normal: 1.5;
 $line-height-relaxed: 1.75;
 
 // Colours
+$color-theme-1: #d62828;
+$color-theme-2: #5cc8ff;
+$color-theme-3: #fff275;
+$color-theme-4: #1b4079;
+
 $color-primary: #005b99;
-$color-text: #282828;
+$color-text: #0d1821;
 $color-text-light: #4f5969;
-$color-heading: #131516;
-$color-heading-black: #000;
-$color-accent: #fbf3f2;
+$color-heading: $color-theme-4;
+$color-heading-black: $color-theme-4;
+$color-accent: #fdfffc;
 $color-success: #3d8f1c;
 $color-danger: #8f351c;
-
-$color-theme-1: #fa991c;
-$color-theme-2: #fbf3f2;
-$color-theme-3: #1c768f;
-$color-theme-4: #032539;
 
 /* HTML elements */
 *,
@@ -131,13 +131,10 @@ h3,
 h4,
 h5,
 h6 {
-// check imported weights and styles in gatsby-browser.jsx
+  // check imported weights and styles in gatsby-browser.jsx
   font-family: $font-heading;
   margin: $spacing-12 0 $spacing-6;
-  // margin-top: $spacing-12;
-  // margin-bottom: $spacing-6;
   line-height: $line-height-tight;
-  // letter-spacing: -0.025em;
 }
 
 h2,
@@ -251,7 +248,7 @@ table thead tr th {
 
 /* Link */
 a {
-  color: $color-theme-3;
+  color: $color-theme-4;
 }
 
 h1 > a {
@@ -366,23 +363,23 @@ figure figcaption {
   h1 {
     font-size: $mobile-font-size-6;
   }
-  
+
   h2 {
     font-size: $mobile-font-size-5;
   }
-  
+
   h3 {
     font-size: $mobile-font-size-4;
   }
-  
+
   h4 {
     font-size: $mobile-font-size-3;
   }
-  
+
   h5 {
     font-size: $mobile-font-size-2;
   }
-  
+
   h6 {
     font-size: $mobile-font-size-1;
   }

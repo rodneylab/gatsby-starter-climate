@@ -26,14 +26,12 @@ const PureBlogPost = ({ children, data }) => {
         <link rel="canonical" href={`${siteUrl}/${slug}`} />
       </Helmet>{' '}
       <Layout data={data}>
-        <main>
-          <article>
-            <h1>{postTitle}</h1>
-            <section itemProp="articleBody">
-              <MDXProvider components={shortcodes}>{children}</MDXProvider>
-            </section>
-          </article>
-        </main>
+        <article>
+          <h1>{postTitle}</h1>
+          <section itemProp="articleBody">
+            <MDXProvider components={shortcodes}>{children}</MDXProvider>
+          </section>
+        </article>
       </Layout>
     </>
   );

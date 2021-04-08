@@ -9,7 +9,7 @@ const PurePageNotFound = ({ data }) => (
   <>
     <SEO data={data} title="Page not Found" />
     <Layout data={data}>
-      <main>
+      <>
         <h1>Page not found!</h1>
         <p>Not sure that page exists!</p>
         <p>
@@ -19,7 +19,7 @@ const PurePageNotFound = ({ data }) => (
           </Link>{' '}
           instead
         </p>
-      </main>
+      </>
     </Layout>
   </>
 );

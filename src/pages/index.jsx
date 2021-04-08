@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import BlogRoll from '../components/BlogRoll';
+import Card from '../components/Card';
 import { PureLayout as Layout } from '../components/Layout';
 import { PureSEO as SEO } from '../components/SEO';
 
@@ -11,19 +12,20 @@ export default function Home({ data }) {
     <>
       <SEO data={data} title="Home" />
       <Layout data={data}>
-        <main>
+        <>
           <header>
-            <h1>Climate Gatsby 3 MDX Blog Starter</h1>
+            <h1>Climate &mdash; Gatsby 3 MDX Blog Starter</h1>
           </header>
-          <section>
+          <Card>
             <h2>About me</h2>
             <p>
               I live and breathe analogue photography. I show you my favourite analogue film cameras
-              on this site.
+              on this site. Hopefully if you are not into analogue photgraphy yet, some of my
+              enthusiasm will rub off onto you.
             </p>
-          </section>
+          </Card>
           <BlogRoll />
-        </main>
+        </>
       </Layout>
     </>
   );
