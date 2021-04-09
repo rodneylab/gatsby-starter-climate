@@ -72,6 +72,14 @@
   }
 }
 
+.hover-jump {
+  transition: all 0.25s ease-in-out;
+}
+
+.hover-jump:hover {
+  transform: translateY(-$spacing-2);
+}
+
 @media screen and (max-width: $desktop-breakpoint) {
   .container {
     margin: $spacing-0 $spacing-4;

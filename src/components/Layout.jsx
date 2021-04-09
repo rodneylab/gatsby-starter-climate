@@ -9,6 +9,7 @@ import {
   footerContainer,
   footerIcons,
   headerContainer,
+  hoverJump,
   logo,
   mainContainer,
   nav,
@@ -31,7 +32,7 @@ const FooterIcons = ({
 }) => (
   <div className={footerIcons}>
     <ul>
-      <li>
+      <li className={hoverJump}>
         <ExternalLink
           aria-label="Go to the Rodney Lab Facebook page"
           href={facebookPage}
@@ -40,7 +41,7 @@ const FooterIcons = ({
           <FacebookIcon />
         </ExternalLink>
       </li>
-      <li>
+      <li className={hoverJump}>
         <ExternalLink
           aria-label="Go to the Rodney Lab Twitter page"
           href={`https://twitter.com/intent/user?screen_name=${twitterUsername.slice(1)}`}
@@ -49,7 +50,7 @@ const FooterIcons = ({
           <TwitterIcon />
         </ExternalLink>
       </li>
-      <li>
+      <li className={hoverJump}>
         <ExternalLink
           aria-label="Go to the Rodney Lab LinkedIn page"
           href={`https://uk.linkedin.com/in/${linkedinProfile}`}
@@ -58,7 +59,7 @@ const FooterIcons = ({
           <LinkedinIcon />
         </ExternalLink>
       </li>
-      <li>
+      <li className={hoverJump}>
         <ExternalLink
           aria-label="Go to the Rodney Lab GitHub page"
           href={`https://github.com/${githubPage}`}
@@ -93,10 +94,11 @@ const RodneyLabCredit = () => (
     {' '}
     <span style={{ display: 'flex', alignItems: 'center' }}>
       <a
+        className={hoverJump}
         aria-label="Open Rodney Lab site"
         href="https://rodneylab.com"
         rel="noopener"
-        style={{ display: 'flex', alignItems: 'center', margin: '0 0.25rem' }}
+        style={{ display: 'flex', alignItems: 'center', margin: '0 0.25rem'}}
       >
         <StaticImage
           alt="Rodney Lab logo"
@@ -126,7 +128,7 @@ export const PureLayout = ({ children, data: { site } }) => {
   return (
     <div className={container}>
       <header className={headerContainer}>
-        <Link aria-label="Jump to home page" to="/">
+        <Link aria-label="Jump to home page" to="/" className={hoverJump}>
           <span className={logo}>
             <CameraIcon />
           </span>
