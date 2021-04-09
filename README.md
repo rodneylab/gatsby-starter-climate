@@ -81,7 +81,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby 3 pro
 
 3.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-4.  **`.env.EXAMPLE`**: This file contains example environment variables.  Make two copies to this same root folder: .env.development and .env.production and add your personal environment variables.  These two files will be excluded from git commits by default.
+4.  **`.env.EXAMPLE`**: This file contains example environment variables.  Make two copies to this same root folder: `.env.development` and `.env.production` and add your personal environment variables.  These two files will be excluded from git commits by default.
 
 5.  **`.eslintrc.js`**: This file tells ESLint which linting rules to apply.  Set to use Airbnb rules by default.  Adjust to suit your taste.  As well as code style rules, it applies a11y recommended accessibility checks.
 
@@ -105,7 +105,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby 3 pro
 
 13.  **`gatsby-node.js`**: This file is where Gatsby 3 expects to find any usage of the [Gatsby&nbsp;3 Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customisation/extension of default Gatsby 3 settings affecting pieces of the site build process.
 
-14.  **`gatsby-ssr.js`**: This file is where Gatsby 3 expects to find any usage of the [Gatsby 3&nbsp;server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customisation of default Gatsby 3 settings affecting server-side rendering.
+14.  **`gatsby-ssr.js`**: This file is where Gatsby 3 expects to find any usage of the [Gatsby&nbsp;3 server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customisation of default Gatsby 3 settings affecting server-side rendering.
 
 15.  **`LICENSE`**: This Gatsby 3 starter is licensed under the BSD-3-Clause license.
 
