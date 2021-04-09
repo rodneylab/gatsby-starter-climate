@@ -7,6 +7,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
     'airbnb',
+    'plugin:cypress/recommended',
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -16,7 +17,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'react', 'jsx-a11y',
+    'react', 'jsx-a11y', 'cypress',
   ],
   rules: {
   },
