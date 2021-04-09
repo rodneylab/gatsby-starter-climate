@@ -14,7 +14,7 @@ export const PureBlogRoll = ({ data, initialPosts }) => {
 
   return (
     <section role="feed">
-      <h2>Blog posts</h2>
+      <h2>BLOG POSTS</h2>
       {totalCount > 0 ? (
         posts.slice(0, showPosts).map(({ node, index }) => (
           <article aria-posinset={index} aria-setsize={totalCount} key={node.id}>
