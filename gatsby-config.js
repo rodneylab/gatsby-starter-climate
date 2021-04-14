@@ -7,6 +7,7 @@
 const path = require('path');
 
 postCssPlugins = require('./postcss-config.js');
+const maxImageWidth = 672;
 const website = require('./config/website');
 
 module.exports = {
@@ -101,8 +102,8 @@ module.exports = {
           pngOptions: { quality: 100, compressionSpeed: 1 },
           webpOptions: { quality: 100 },
           tracedSVGOptions: {
-            color: '#032539',
-            background: '#1c768f',
+            color: '#5cc8ff',
+            background: '#fff275',
           },
         },
         defaultQuality: 100,
@@ -111,6 +112,14 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-remark-images',
+      options: {
+        linkImagesToOriginal: false,
+        maxWidth: maxImageWidth,
+        showCaptions: true,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
@@ -127,7 +136,18 @@ module.exports = {
           default: path.resolve('./src/templates/blog-post.jsx'),
         },
         extensions: ['.mdx', '.md'],
-        plugins: [],
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              linkImagesToOriginal: false,
+              maxWidth: maxImageWidth,
+              showCaptions: ['title'],
+              withWebp: { quality: 100 },
+              tracedSVG: { color: '#5cc8ff', background: '#fff275' },
+            },
+          },
+        ],
         gatsbyRemarkPlugins: [],
       },
     },

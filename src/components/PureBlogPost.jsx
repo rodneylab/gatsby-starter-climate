@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import PropTypes from 'prop-types';
 
+import BannerImage from './BannerImage';
 import { ExternalLink, TwitterMessageLink } from './Link';
 import { PureLayout as Layout } from './Layout';
 import { PureSEO as SEO } from './SEO';
@@ -16,7 +17,7 @@ const shortcodes = {
 
 const PureBlogPost = ({ children, data }) => {
   const { frontmatter, slug } = data.post;
-  const { postTitle } = frontmatter;
+  const { bannerImage, featuredImageAlt, postTitle } = frontmatter;
   const { siteUrl } = data.site.siteMetadata;
 
   return (
@@ -29,6 +30,7 @@ const PureBlogPost = ({ children, data }) => {
       <Layout data={data}>
         <article>
           <h1>{postTitle}</h1>
+        <BannerImage imageData={bannerImage} alt={featuredImageAlt} />
           <section itemProp="articleBody">
             <MDXProvider components={shortcodes}>{children}</MDXProvider>
           </section>

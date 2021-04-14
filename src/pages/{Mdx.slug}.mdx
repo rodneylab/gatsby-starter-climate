@@ -23,6 +23,10 @@ query blogPostTemplateQuery($slug: String!) {
       lastUpdated(formatString: "YYYY-MM-DDTHH:mm:ssZ")
       postTitle
       seoMetaDescription
+      featuredImageAlt
+      bannerImage: featuredImage {
+        ...BannerImageFragment
+      }
     }
   }
 }
