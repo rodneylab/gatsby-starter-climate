@@ -1,0 +1,250 @@
+@import '../styles/styles.scss';
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $spacing-32; // this adds some offset so when we scroll the card is not right at the top of the screen
+}
+
+$image-width: calc(#{$desktop-breakpoint - (2 * $spacing-4)});
+$image-height: calc(#{$image-width / 1.5});
+
+.card-container {
+  display: flex;
+  width: 100%;
+}
+
+.card-content {
+  width: 100%;
+  border: $spacing-px-2 solid $color-theme-4;
+  background-color: $color-accent;
+  border-radius: $spacing-3;
+  margin: $spacing-6 auto;
+  padding: $spacing-4;
+
+  h2 {
+    margin: $spacing-0 $spacing-2;
+  }
+  p {
+    font-size: $font-size-1;
+    margin: $spacing-2;
+  }
+}
+
+.slider {
+  width: $image-width;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  background-color: $color-theme-4; // this is visible in space between slides on scroll
+  perspective: 1200;
+  border-radius: $spacing-1;
+}
+
+.slides::-webkit-scrollbar {
+  width: $spacing-3;
+  height: $spacing-3;
+}
+.slides::-webkit-scrollbar-thumb {
+  background: $color-theme-4;
+  border-radius: $spacing-3;
+}
+.slides::-webkit-scrollbar-track {
+  background: $color-theme-3;
+}
+
+.slide-container {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: $image-width;
+  height: $image-height;
+  margin-right: $spacing-16; // this is the space between slides (visible during scroll)
+  background: $color-theme-4;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $spacing-24;
+}
+
+.slider-shortcuts {
+  display: flex;
+  justify-content: center;
+}
+
+.slider-shortcut {
+  display: inline-flex;
+  width: $spacing-6;
+  height: $spacing-6;
+  background: $color-theme-4;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: $spacing-2 $spacing-3 $spacing-0 $spacing-0;
+  position: relative;
+  font-weight: $font-weight-bold;
+}
+
+.slider-shortcut-active {
+  background: $color-theme-1;
+}
+
+.slider-shortcut:active {
+  top: 1px;
+  background-color: $color-theme-3;
+}
+.slider-shortcut:focus {
+  background: $color-theme-3;
+}
+
+.image {
+  border-radius: $spacing-1;
+}
+
+.overlay-text {
+  display: inline;
+  position: absolute;
+  top: $spacing-4;
+  left: $spacing-4;
+  background: rgba($color: $color-theme-4, $alpha: 0.6);
+  color: $color-accent;
+  padding: $spacing-0 $spacing-2;
+  font-size: $font-size-4;
+}
+
+.slide {
+  width: $image-width;
+  height: $image-height;
+  transform-style: preserve-3d;
+  transition: all 0.4s ease;
+}
+
+.slide:hover {
+  transform: rotateY(179.9deg);
+}
+
+// disable transition for Safari
+@media not all and (min-resolution: 0.001dpcm) {
+  .slide:hover {
+    transform: rotateY(0);
+  }
+}
+
+.slide-front,
+.slide-back {
+  color: #fff;
+  position: absolute;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.slide-back {
+  transform: rotateY(179.9deg);
+  border-radius: $spacing-1;
+}
+
+.slide-back-content {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-theme-4;
+  padding: $spacing-6 $spacing-8;
+  height: 100%;
+
+  .detail-text-short {
+    display: none;
+  }
+
+  h2,
+  p {
+    color: $color-theme-3;
+  }
+  h2 {
+    font-size: $font-size-5;
+    font-family: $font-body;
+    color: $color-theme-3;
+  }
+  p {
+    font-size: $font-size-2;
+    color: $color-accent;
+    text-align: left;
+  }
+
+  .icon {
+    color: $color-theme-2;
+    font-size: $font-size-7;
+    padding: $spacing-8 $spacing-0 $spacing-6;
+  }
+}
+
+@supports (scroll-snap-type) {
+  .slider-shortcut {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $desktop-breakpoint) {
+  .slider {
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+  }
+
+  .slide-container {
+    width: 320px;
+    height: 213px;
+  }
+
+  .slide {
+    width: 320px;
+    height: 213px;
+  }
+
+  .overlay-text {
+    font-size: $font-size-1;
+  }
+
+  .slide-back-content {
+    padding: $spacing-4 $spacing-2;
+    h2,
+    .icon {
+      display: none;
+    }
+
+    .detail-text {
+      display: none;
+    }
+
+    .detail-text-short {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: $max-width-sm) {
+  .slider {
+    width: 256px;
+  }
+
+  .slide-container {
+    width: 256px;
+    height: 170px;
+  }
+
+  .slide {
+    width: 256px;
+    height: 170px;
+  }
+}

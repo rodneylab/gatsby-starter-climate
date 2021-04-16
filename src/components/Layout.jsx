@@ -98,7 +98,7 @@ const RodneyLabCredit = () => (
         aria-label="Open Rodney Lab site"
         href="https://rodneylab.com"
         rel="noopener"
-        style={{ display: 'flex', alignItems: 'center', margin: '0 0.25rem'}}
+        style={{ display: 'flex', alignItems: 'center', margin: '0 0.25rem' }}
       >
         <StaticImage
           alt="Rodney Lab logo"

@@ -4,10 +4,14 @@ import PropTypes from 'prop-types';
 
 import BlogRoll from '../components/BlogRoll';
 import Card from '../components/Card';
+import Projects from '../components/Projects';
 import { PureLayout as Layout } from '../components/Layout';
 import { PureSEO as SEO } from '../components/SEO';
 
 export default function Home({ data }) {
+  const { projectImage1, projectImage2, projectImage3 } = data;
+  const projectCarouselImages = [projectImage1, projectImage2, projectImage3];
+
   return (
     <>
       <SEO data={data} title="Home" />
@@ -25,6 +29,7 @@ export default function Home({ data }) {
               enthusiasm will rub off onto you.
             </p>
           </Card>
+          <Projects carouselImages={projectCarouselImages} />
           <BlogRoll />
         </>
       </Layout>
@@ -37,6 +42,9 @@ Home.propTypes = {
     site: PropTypes.shape({
       buildTime: PropTypes.string,
     }),
+    projectImage1: PropTypes.shape.isRequired,
+    projectImage2: PropTypes.shape.isRequired,
+    projectImage3: PropTypes.shape.isRequired,
   }).isRequired,
 };
 
@@ -47,5 +55,6 @@ export const query = graphql`
       ...SEOFragment
     }
     ...BlogRollFragment
+    ...ProjectsFragment
   }
 `;

@@ -21,6 +21,12 @@ export const FacebookIcon = () => (
     <FeatherIcon icon="facebook" />
   </span>
 );
+// eslint-disable-next-line react/prop-types
+export const FilmIcon = ({ size = '16' }) => (
+  <span role="img" aria-label="film">
+    <FeatherIcon icon="film" size={size} />
+  </span>
+);
 export const GithubIcon = () => (
   <span role="img" aria-label="git hub">
     <FeatherIcon icon="github" />
@@ -31,9 +37,21 @@ export const LinkedinIcon = () => (
     <FeatherIcon icon="linkedin" />
   </span>
 );
+// eslint-disable-next-line react/prop-types
+export const SettingsIcon = ({ size = '16' }) => (
+  <span role="img" aria-label="settings">
+    <FeatherIcon icon="settings" size={size} />
+  </span>
+);
 export const TelegramIcon = () => (
   <span role="img" aria-label="telegram">
     <FeatherIcon icon="send" />
+  </span>
+);
+// eslint-disable-next-line react/prop-types
+export const ThermometerIcon = ({ size = '16' }) => (
+  <span role="img" aria-label="thermometer">
+    <FeatherIcon icon="thermometer" size={size} />
   </span>
 );
 export const TwitterIcon = () => (
