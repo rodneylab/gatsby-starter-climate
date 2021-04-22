@@ -78,7 +78,7 @@ module.exports = {
         },
         allPageHeaders: [
           `Report-To: {"group": "csp-endpoint", "max_age": 10886400, "endpoints": [{"url": "https://sentry.io/api/${process.env.SENTRY_PROJECT_ID}/security/?sentry_key=${process.env.SENTRY_KEY}"}]}`,
-          'Permissions-Policy: accelerometer=(), autoplay=(), camera=(), document-domain=(), encrypted-media=(), fullscreen=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), xr-spatial-tracking=(), geolocation=()',
+          'Permissions-Policy: accelerometer=(), autoplay=(), camera=(), document-domain=(), encrypted-media=(), fullscreen=(), gyroscope=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), xr-spatial-tracking=(), geolocation=()',
           `Expect-CT: max-age=86400, report-uri="https://sentry.io/api/${process.env.SENTRY_PROJECT_ID}/security/?sentry_key=${process.env.SENTRY_KEY}"`,
           'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload',
         ],
