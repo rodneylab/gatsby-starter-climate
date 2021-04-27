@@ -73,13 +73,15 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-gatsby-cloud',
       options: {
-        // headers: {
-        //   '/': ['Content-Security-Policy: __REPLACE_ME__'], // do not replace manually, csp-util will replace
-        // },
-        allPageHeaders: [
-          'Permissions-Policy: accelerometer=(), autoplay=(), camera=(), document-domain=(), encrypted-media=(), fullscreen=(), gyroscope=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), xr-spatial-tracking=(), geolocation=()',
-          'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload',
-        ],
+        headers: {
+          '/': [
+            'Permissions-Policy: accelerometer=(), autoplay=(), camera=(), document-domain=(), encrypted-media=(), fullscreen=(), gyroscope=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), xr-spatial-tracking=(), geolocation=()',
+            'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload',
+          ],
+        },
+        // headers: [ 'Permissions-Policy: accelerometer=(), autoplay=(), camera=(), document-domain=(), encrypted-media=(), fullscreen=(), gyroscope=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), xr-spatial-tracking=(), geolocation=()',
+        //   'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload',
+        // ],
         mergeSecurityHeaders: true,
         mergeLinkHeaders: true,
         mergeCachingHeaders: true,
