@@ -24,7 +24,7 @@ export default function Contact({ data }) {
 
   return (
     <>
-      <SEO data={data} title="Contact" />
+      <SEO data={data} title="Contact" metadescription="Get in touch with Rodneylab, the developer of Climate Gatsby v3 Starter" />
       <Layout data={data}>
         <Card>
           <h1>Contact me</h1>

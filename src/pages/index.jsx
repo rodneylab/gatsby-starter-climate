@@ -10,7 +10,7 @@ import { PureSEO as SEO } from '../components/SEO';
 export default function Home({ data }) {
   return (
     <>
-      <SEO data={data} title="Home" />
+      <SEO data={data} title="Home" metadescription="Climate - Gatsby v3 Starter for MDX Gatsby Blog" />
       <Layout data={data}>
         <>
           <header>

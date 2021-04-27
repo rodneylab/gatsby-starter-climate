@@ -5,15 +5,23 @@ import PropTypes from 'prop-types';
 
 import { VERTICAL_LINE_ENTITY } from '../constants/entities';
 
-export const PureSEO = ({ data, title }) => {
+export const PureSEO = ({ data, title, metadescription }) => {
   const { siteLanguage, siteTitle } = data.site.siteMetadata;
 
   const getPageTitle = () => `${title} ${VERTICAL_LINE_ENTITY} ${siteTitle}`;
 
-  return <Helmet title={getPageTitle()} htmlAttributes={{ lang: siteLanguage }} />;
+  return (
+    <>
+      <Helmet title={getPageTitle()} htmlAttributes={{ lang: siteLanguage }} />
+      <Helmet>
+        <meta name="description" content={metadescription} />
+      </Helmet>
+    </>
+  );
 };
 
 PureSEO.propTypes = {
+  metadescription: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   data: PropTypes.shape({
     site: PropTypes.shape({
