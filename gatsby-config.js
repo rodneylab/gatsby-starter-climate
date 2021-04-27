@@ -36,40 +36,40 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-csp',
-      options: {
-        disableOnDev: true,
-        mergeScriptHashes: true,
-        mergeStyleHashes: true,
-        mergeDefaultDirectives: true,
-        directives: {
-          'base-uri': "'self'",
-          'block-all-mixed-content': '',
-          'child-src': "'self'",
-          'connect-src':
-            "'self' https://www.google-analytics.com/analytics.js https://www.google-analytics.com/collect https://connect.facebook.net/en_US/fbevents.js https://www.google-analytics.com/j/collect https://www.gstatic.com/recaptcha/releases/ https://www.facebook.com/tr/",
-          'default-src': `'self' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.gstatic.com/recaptcha/releases/`,
-          'disown-opener': '',
-          'font-src': "'self' data:",
-          'form-action': "'self' https://www.facebook.com/tr/",
-          'frame-ancestors': "'self'",
-          'frame-src':
-            "'self' https://www.facebook.com https://www.google.com/recaptcha/api2/anchor https://www.google.com/recaptcha/api2/bframe https://www.youtube-nocookie.com/embed/",
-          'img-src':
-            "'self' data: www.google-analytics.com https://www.facebook.com https://webmention.io/avatar/pbs.twimg.com/",
-          'manifest-src': "'self'",
-          'media-src': "'self' data:",
-          'object-src': "'none'",
-          sandbox: '',
-          // 'script-src': `'self' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/ 'report-sample'`,
-          'script-src': '\'self\' \'unsafe-inline\' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/ \'report-sample\'',
-          // 'style-src': "'self' 'unsafe-hashes' 'report-sample'",
-          'style-src': "'self' 'unsafe-inline' 'report-sample'",
-          'worker-src': "'self'",
-        },
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-csp',
+    //   options: {
+    //     disableOnDev: true,
+    //     mergeScriptHashes: true,
+    //     mergeStyleHashes: true,
+    //     mergeDefaultDirectives: true,
+    //     directives: {
+    //       'base-uri': "'self'",
+    //       'block-all-mixed-content': '',
+    //       'child-src': "'self'",
+    //       'connect-src':
+    //         "'self' https://www.google-analytics.com/analytics.js https://www.google-analytics.com/collect https://connect.facebook.net/en_US/fbevents.js https://www.google-analytics.com/j/collect https://www.gstatic.com/recaptcha/releases/ https://www.facebook.com/tr/",
+    //       'default-src': `'self' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.gstatic.com/recaptcha/releases/`,
+    //       'disown-opener': '',
+    //       'font-src': "'self' data:",
+    //       'form-action': "'self' https://www.facebook.com/tr/",
+    //       'frame-ancestors': "'self'",
+    //       'frame-src':
+    //         "'self' https://www.facebook.com https://www.google.com/recaptcha/api2/anchor https://www.google.com/recaptcha/api2/bframe https://www.youtube-nocookie.com/embed/",
+    //       'img-src':
+    //         "'self' data: www.google-analytics.com https://www.facebook.com https://webmention.io/avatar/pbs.twimg.com/",
+    //       'manifest-src': "'self'",
+    //       'media-src': "'self' data:",
+    //       'object-src': "'none'",
+    //       sandbox: '',
+    //       // 'script-src': `'self' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/ 'report-sample'`,
+    //       'script-src': '\'self\' \'unsafe-inline\' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/ \'report-sample\'',
+    //       // 'style-src': "'self' 'unsafe-hashes' 'report-sample'",
+    //       'style-src': "'self' 'unsafe-inline' 'report-sample'",
+    //       'worker-src': "'self'",
+    //     },
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-gatsby-cloud',
       options: {
