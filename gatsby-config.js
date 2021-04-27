@@ -49,7 +49,7 @@ module.exports = {
           'child-src': "'self'",
           'connect-src':
             "'self' https://www.google-analytics.com/analytics.js https://www.google-analytics.com/collect https://connect.facebook.net/en_US/fbevents.js https://www.google-analytics.com/j/collect https://www.gstatic.com/recaptcha/releases/ https://www.facebook.com/tr/",
-          'default-src': `'self' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://connect.facebook.net/signals/config/${website.facebookAdPixel} https://www.gstatic.com/recaptcha/releases/`,
+          'default-src': `'self' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.gstatic.com/recaptcha/releases/`,
           'disown-opener': '',
           'font-src': "'self' data:",
           'form-action': "'self' https://www.facebook.com/tr/",
@@ -62,11 +62,9 @@ module.exports = {
           'media-src': "'self' data:",
           'object-src': "'none'",
           sandbox: '',
-          'script-src': `'self' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://connect.facebook.net/signals/config/${website.facebookAppId} https://connect.facebook.net/signals/config/${website.facebookAdPixel} https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/ 'report-sample'`,
+          'script-src': `'self' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/ 'report-sample'`,
           'style-src': "'self' 'unsafe-hashes' 'report-sample'",
           'worker-src': "'self'",
-          'report-to': 'csp-endpoint',
-          'report-uri': `https://sentry.io/api/${process.env.SENTRY_PROJECT_ID}/security/?sentry_key=${process.env.SENTRY_KEY}`,
         },
       },
     },
@@ -77,9 +75,7 @@ module.exports = {
           '/': ['Content-Security-Policy: __REPLACE_ME__'], // do not replace manually, csp-util will replace
         },
         allPageHeaders: [
-          `Report-To: {"group": "csp-endpoint", "max_age": 10886400, "endpoints": [{"url": "https://sentry.io/api/${process.env.SENTRY_PROJECT_ID}/security/?sentry_key=${process.env.SENTRY_KEY}"}]}`,
           'Permissions-Policy: accelerometer=(), autoplay=(), camera=(), document-domain=(), encrypted-media=(), fullscreen=(), gyroscope=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), xr-spatial-tracking=(), geolocation=()',
-          `Expect-CT: max-age=86400, report-uri="https://sentry.io/api/${process.env.SENTRY_PROJECT_ID}/security/?sentry_key=${process.env.SENTRY_KEY}"`,
           'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload',
         ],
         mergeSecurityHeaders: true,
