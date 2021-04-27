@@ -69,7 +69,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-netlify',
+      resolve: 'gatsby-plugin-gatsby-cloud',
       options: {
         headers: {
           '/': ['Content-Security-Policy: __REPLACE_ME__'], // do not replace manually, csp-util will replace

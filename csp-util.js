@@ -11,7 +11,8 @@ const sha256 = require('crypto-js/sha256');
 const Base64 = require('crypto-js/enc-base64');
 
 const PUBLIC_FOLDER = path.join(__dirname, 'public');
-const OUTPUT_FILE = path.join(PUBLIC_FOLDER, '_headers');
+// const OUTPUT_FILE = path.join(PUBLIC_FOLDER, '_headers');
+const OUTPUT_FILE = path.join(PUBLIC_FOLDER, '_headers.json');
 
 const removeCspMeta = (inputFile) => {
   const fileContents = fs.readFileSync(inputFile, { encoding: 'utf-8' });
