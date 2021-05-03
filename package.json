@@ -6,7 +6,6 @@
   "license": "BSD-3-Clause",
   "scripts": {
     "build": "gatsby build",
-    "preinstall": "node ./csp-util.js",
     "cypress:open": "cypress open",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
