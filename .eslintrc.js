@@ -4,21 +4,17 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-    'airbnb',
-    'plugin:cypress/recommended',
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "airbnb",
   ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: "module",
   },
-  plugins: [
-    'react', 'jsx-a11y', 'cypress',
-  ],
-  rules: {
-  },
+  plugins: ["react", "jsx-a11y"],
+  rules: {},
 };

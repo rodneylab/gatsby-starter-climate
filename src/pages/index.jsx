@@ -15,7 +15,7 @@ export default function Home({ data }) {
         <>
           <header>
             <h1>Climate &mdash; Gatsby 3 Starter</h1>
-            <h2>Gatsby 3 Starter for MDX Blog Sites</h2>
+            <h2>Gatsby 3 Theme for MDX Blog Sites</h2>
           </header>
           <Card>
             <h2>About me</h2>

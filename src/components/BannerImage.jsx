@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 
 import { image } from './BannerImage.module.scss';
 
-export const BlogPostBannerImage = ({ imageData, alt, width, height }) => (
+export const BlogPostBannerImage = ({
+  imageData, alt, width, height,
+}) => (
   <GatsbyImage
     className={image}
     image={getImage(imageData)}
