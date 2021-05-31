@@ -27,9 +27,7 @@
 function printAccessibilityViolations(violations) {
   cy.task(
     'table',
-    violations.map(({
-      id, impact, description, nodes,
-    }) => ({
+    violations.map(({ id, impact, description, nodes }) => ({
       impact,
       description: `${description} (${id})`,
       nodes: nodes.length,

@@ -21,7 +21,9 @@
     "cypress:open": "cypress open",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint:js": "eslint --cache --ext .js,.jsx .",
     "lint:scss": "stylelint \"src/**/*.scss\"",
+    "prettier:check": "prettier --config .prettierrc --check  \"**/*.{js,jsx,ts,tsx,json,md,mdx}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -36,6 +38,7 @@
     "crypto-js": "^4.0.0",
     "dayjs": "^1.10.5",
     "domhandler": "^4.2.0",
+    "dotenv": "^10.0.0",
     "feather-icons-react": "^0.4.3",
     "gatsby": "^3.6.1",
     "gatsby-plugin-csp": "^1.1.3",
@@ -67,9 +70,11 @@
     "cypress-axe": "^0.12.2",
     "eslint": "^7.27.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
@@ -87,7 +92,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run prettier:check"
     }
   }
 }

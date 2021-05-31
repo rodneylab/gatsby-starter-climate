@@ -13,12 +13,10 @@ const PurePageNotFound = ({ data }) => (
         <h1>Page not found!</h1>
         <p>Not sure that page exists!</p>
         <p>
-          Go to
-          {' '}
+          Go to{' '}
           <Link aria-label="Go to home page" to="/">
             home page
-          </Link>
-          {' '}
+          </Link>{' '}
           instead
         </p>
       </>

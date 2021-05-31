@@ -7,9 +7,7 @@ import Card from '../components/Card';
 import { contactAddress, contactDetails } from './contact.module.scss';
 import { PureLayout as Layout } from '../components/Layout';
 import { PureSEO as SEO } from '../components/SEO';
-import {
-  EmailIcon, FacebookIcon, TelegramIcon, TwitterIcon, WireIcon,
-} from '../components/Icons';
+import { EmailIcon, FacebookIcon, TelegramIcon, TwitterIcon, WireIcon } from '../components/Icons';
 import { ExternalLink, TwitterMessageLink } from '../components/Link';
 
 export default function Contact({ data }) {
@@ -24,7 +22,11 @@ export default function Contact({ data }) {
 
   return (
     <>
-      <SEO data={data} title="Contact" metadescription="Get in touch with Rodneylab, the developer of Climate Gatsby v3 Starter" />
+      <SEO
+        data={data}
+        title="Contact"
+        metadescription="Get in touch with Rodneylab, the developer of Climate Gatsby v3 Starter"
+      />
       <Layout data={data}>
         <Card>
           <h1>Contact me</h1>
@@ -45,8 +47,7 @@ export default function Contact({ data }) {
                 </ExternalLink>
               </li>
               <li>
-                <TwitterIcon />
-                {' '}
+                <TwitterIcon />{' '}
                 <TwitterMessageLink twitterUserId={twitterUserId}>
                   <span className={contactAddress}>{twitterUsername}</span>
                 </TwitterMessageLink>

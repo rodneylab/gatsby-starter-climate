@@ -6,7 +6,7 @@
 
 const path = require('path');
 
-const postCssPlugins = require('./postcss-config.js');
+const postCssPlugins = require('./postcss-config');
 
 const maxImageWidth = 672;
 const website = require('./config/website');

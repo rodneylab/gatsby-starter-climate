@@ -7,6 +7,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
     'airbnb',
+    'prettier',
     'plugin:cypress/recommended',
   ],
   parserOptions: {
@@ -16,9 +17,8 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react', 'jsx-a11y', 'cypress',
-  ],
+  plugins: ['react', 'jsx-a11y', 'cypress', 'prettier'],
   rules: {
+    'prettier/prettier': 'error',
   },
 };

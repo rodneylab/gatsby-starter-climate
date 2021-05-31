@@ -17,8 +17,7 @@ const Heading = ({ children, as, hash }) => {
       onMouseLeave: () => setShowLink(false),
     },
     <span>
-      {children}
-      {' '}
+      {children}{' '}
       <a aria-hidden className={showLink ? '' : hideHeadingLink} href={`#${hash}`}>
         #
       </a>

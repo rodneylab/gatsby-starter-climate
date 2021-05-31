@@ -9,14 +9,8 @@
     "editor.wordWrapColumn": 80,
     "editor.quickSuggestions": false
   },
-  "spellright.language": [
-    "en_GB"
-  ],
-  "spellright.documentTypes": [
-    "markdown",
-    "latex",
-    "mdx"
-  ],
+  "spellright.language": ["en_GB"],
+  "spellright.documentTypes": ["markdown", "latex", "mdx"],
   "spellright.parserByClass": {
     "mdx": {
       "parser": "markdown"

@@ -48,9 +48,7 @@ const BlogPostSummary = ({
         <p>{`${date.format('D')} ${date.format('MMM')}`}</p>
         <p>{seoMetaDescription}</p>
         <span aria-hidden id={idString}>
-          Read more
-          {' '}
-          {H_ELLIPSIS_ENTITY}
+          Read more {H_ELLIPSIS_ENTITY}
         </span>
       </div>
     </div>

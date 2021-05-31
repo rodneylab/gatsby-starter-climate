@@ -11,7 +11,6 @@ const sha256 = require('crypto-js/sha256');
 const Base64 = require('crypto-js/enc-base64');
 
 const PUBLIC_FOLDER = path.join(__dirname, 'public');
-// const OUTPUT_FILE = path.join(PUBLIC_FOLDER, '_headers');
 const OUTPUT_FILE = path.join(PUBLIC_FOLDER, '_headers.json');
 
 const removeCspMeta = (inputFile) => {
@@ -21,7 +20,6 @@ const removeCspMeta = (inputFile) => {
   fs.writeFileSync(inputFile, newFileContents, { encoding: 'utf-8' });
 };
 
-// targetFolderToTokenMapping.forEach((TOKEN_TO_REPLACE, INPUT_FILE) => {
 const INPUT_PATH = path.join(PUBLIC_FOLDER, './index.html');
 let styleHashArray = [];
 let styleSrcAttrHashArray = [];
@@ -39,8 +37,8 @@ function getCspContentFrom(inputFile) {
         onopentag: (name, attributes) => {
           if (name === 'meta') {
             if (
-              attributes['http-equiv']
-              && attributes['http-equiv'] === 'Content-Security-Policy'
+              attributes['http-equiv'] &&
+              attributes['http-equiv'] === 'Content-Security-Policy'
             ) {
               found = true;
               retVal = attributes.content;
@@ -56,10 +54,10 @@ function getCspContentFrom(inputFile) {
     const findBodyStyle = (nodeArray) => {
       nodeArray.forEach((element) => {
         if (
-          element.name === 'span'
-          && element.attribs.class
-          && element.attribs.class === 'gatsby-resp-image-background-image'
-          && element.attribs.style
+          element.name === 'span' &&
+          element.attribs.class &&
+          element.attribs.class === 'gatsby-resp-image-background-image' &&
+          element.attribs.style
         ) {
           const hash = sha256(element.attribs.style);
           styleSrcAttrHashArray.push(`'sha256-${hash.toString(Base64)}'`);
@@ -147,7 +145,7 @@ function updateNetlifyHeaderFile(cspText, outputFile) {
       // eslint-disable-next-line no-console
       console.log("Modified Netlify's headers file successfully");
     } else {
-      throw new Error(`Failed to find the expected token to replace: ${TOKEN_TO_REPLACE}`);
+      throw new Error(`Failed to find the expected token to replace: __REPLACE_ME__`);
     }
   } catch (error) {
     // eslint-disable-next-line no-console

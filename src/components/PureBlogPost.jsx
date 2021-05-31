@@ -17,9 +17,7 @@ const shortcodes = {
 
 const PureBlogPost = ({ children, data }) => {
   const { frontmatter, slug } = data.post;
-  const {
-    bannerImage, featuredImageAlt, seoMetaDescription, postTitle,
-  } = frontmatter;
+  const { bannerImage, featuredImageAlt, seoMetaDescription, postTitle } = frontmatter;
   const { siteUrl } = data.site.siteMetadata;
 
   return (
