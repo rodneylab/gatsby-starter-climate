@@ -44,7 +44,7 @@ const FooterIcons = ({
       </li>
       <li className={hoverJump}>
         <ExternalLink
-          aria-label="Go to the Rodney Lab LinkedIn page"
+          aria-label="Go to the Rodney Lab Linked In page"
           href={`https://uk.linkedin.com/in/${linkedinProfile}`}
           showExternalIcon={false}
         >
@@ -53,7 +53,7 @@ const FooterIcons = ({
       </li>
       <li className={hoverJump}>
         <ExternalLink
-          aria-label="Go to the Rodney Lab GitHub page"
+          aria-label="Go to the Rodney Lab Git Hub page"
           href={`https://github.com/${githubPage}`}
           showExternalIcon={false}
         >
