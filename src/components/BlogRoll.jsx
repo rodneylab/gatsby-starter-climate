@@ -17,7 +17,7 @@ export const PureBlogRoll = ({ data, initialPosts }) => {
       <h2>BLOG POSTS</h2>
       {totalCount > 0 ? (
         posts.slice(0, showPosts).map(({ node, index }) => (
-          <article aria-posinset={index} aria-setsize={totalCount} key={node.id}>
+          <article aria-posinset={index + 1} aria-setsize={totalCount} key={node.id}>
             <BlogPostSummary
               excerpt={node.excerpt}
               frontmatter={node.frontmatter}
