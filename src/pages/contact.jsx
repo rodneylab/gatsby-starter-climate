@@ -40,7 +40,7 @@ export default function Contact({ data }) {
               <li>
                 <FacebookIcon />
                 <ExternalLink
-                  aria-label="DM Rodney Lab on Facebook Messenger"
+                  aria-label="D M Rodney Lab on Facebook Messenger"
                   href={`https://m.me/${facebookPageName}`}
                 >
                   <span className={contactAddress}>{facebookPageName}</span>
