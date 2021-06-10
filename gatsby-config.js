@@ -37,42 +37,41 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-csp',
-    //   options: {
-    //     disableOnDev: true,
-    //     mergeScriptHashes: true,
-    //     mergeStyleHashes: true,
-    //     mergeDefaultDirectives: true,
-    //     directives: {
-    //       'base-uri': "'self'",
-    //       'block-all-mixed-content': '',
-    //       'child-src': "'self'",
-    //       'connect-src':
-    //         "'self' https://www.google-analytics.com/analytics.js https://www.google-analytics.com/collect https://connect.facebook.net/en_US/fbevents.js https://www.google-analytics.com/j/collect https://www.gstatic.com/recaptcha/releases/ https://www.facebook.com/tr/",
-    //       'default-src': `'self' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.gstatic.com/recaptcha/releases/`,
-    //       'disown-opener': '',
-    //       'font-src': "'self' data:",
-    //       'form-action': "'self' https://www.facebook.com/tr/",
-    //       'frame-ancestors': "'self'",
-    //       'frame-src':
-    //         "'self' https://www.facebook.com https://www.google.com/recaptcha/api2/anchor https://www.google.com/recaptcha/api2/bframe https://www.youtube-nocookie.com/embed/",
-    //       'img-src':
-    //         "'self' data: www.google-analytics.com https://www.facebook.com https://webmention.io/avatar/pbs.twimg.com/",
-    //       'manifest-src': "'self'",
-    //       'media-src': "'self' data:",
-    //       'object-src': "'none'",
-    //       sandbox: '',
-    //       // 'script-src': `'self' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/ 'report-sample'`,
-    //       'script-src': '\'self\' \'unsafe-inline\' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/ \'report-sample\'',
-    //       // 'style-src': "'self' 'unsafe-hashes' 'report-sample'",
-    //       'style-src': "'self' 'unsafe-inline' 'report-sample'",
-    //       'worker-src': "'self'",
-    //     },
-    //   },
-    // },
     {
-      resolve: 'gatsby-plugin-gatsby-cloud',
+      resolve: 'gatsby-plugin-csp',
+      options: {
+        disableOnDev: true,
+        mergeScriptHashes: true,
+        mergeStyleHashes: true,
+        mergeDefaultDirectives: true,
+        directives: {
+          'base-uri': "'self'",
+          'block-all-mixed-content': '',
+          'child-src': "'self'",
+          'connect-src':
+            "'self' https://www.google-analytics.com/analytics.js https://www.google-analytics.com/collect https://connect.facebook.net/en_US/fbevents.js https://www.google-analytics.com/j/collect https://www.gstatic.com/recaptcha/releases/ https://www.facebook.com/tr/",
+          'default-src': `'self' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.gstatic.com/recaptcha/releases/`,
+          'disown-opener': '',
+          'font-src': "'self' data:",
+          'form-action': "'self' https://www.facebook.com/tr/",
+          'frame-ancestors': "'self'",
+          'frame-src':
+            "'self' https://www.facebook.com https://www.google.com/recaptcha/api2/anchor https://www.google.com/recaptcha/api2/bframe https://www.youtube-nocookie.com/embed/",
+          'img-src':
+            "'self' data: www.google-analytics.com https://www.facebook.com https://webmention.io/avatar/pbs.twimg.com/",
+          'manifest-src': "'self'",
+          'media-src': "'self' data:",
+          'object-src': "'none'",
+          sandbox: '',
+          'script-src':
+            "'self' 'unsafe-inline' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/ 'report-sample'",
+          'style-src': "'self' 'unsafe-inline' 'report-sample'",
+          'worker-src': "'self'",
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-netlify',
       options: {
         headers: {
           '/': [
@@ -81,9 +80,6 @@ module.exports = {
             'X-Robots-Tag: index',
           ],
         },
-        // headers: [ 'Permissions-Policy: accelerometer=(), autoplay=(), camera=(), document-domain=(), encrypted-media=(), fullscreen=(), gyroscope=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), xr-spatial-tracking=(), geolocation=()',
-        //   'Strict-Transport-Security: max-age=31536000; includeSubDomains; preload',
-        // ],
         mergeSecurityHeaders: true,
         mergeLinkHeaders: true,
         mergeCachingHeaders: true,
@@ -113,6 +109,22 @@ module.exports = {
         useMozJpeg: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: website.siteTitle,
+        short_name: website.siteTitle,
+        start_url: '/',
+        background_color: website.background_color,
+        theme_color: website.theme_color,
+        display: 'standalone',
+        icon: website.favicon,
+        icon_options: {
+          purpose: 'any maskable',
+        },
+      },
+    },
+    'gatsby-plugin-offline',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-remark-images',
@@ -130,6 +142,8 @@ module.exports = {
         path: `${__dirname}/content/blog`,
       },
     },
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-preact',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {

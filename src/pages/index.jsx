@@ -13,7 +13,7 @@ export default function Home({ data }) {
       <SEO
         data={data}
         title="Home"
-        metadescription="Climate - Gatsby v3 Starter for MDX Gatsby Blog"
+        metadescription="Climate - Gatsby v3 MDX Blog Starter - starter code by Rodney Lab to help you get going on your next blog site"
       />
       <Layout data={data}>
         <>
