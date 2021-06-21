@@ -74,7 +74,7 @@
     "browserslist": "^4.16.6",
     "cypress": "^7.5.0",
     "cypress-axe": "^0.12.2",
-    "eslint": "^7.28.0",
+    "eslint": "^7.29.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-cypress": "^2.11.3",

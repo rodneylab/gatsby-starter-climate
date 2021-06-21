@@ -64,7 +64,7 @@ module.exports = {
           'object-src': "'none'",
           sandbox: '',
           'script-src':
-            "'self' 'unsafe-inline' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/ 'report-sample'",
+            "'self' 'strict-dynamic' 'unsafe-inline' https://www.google-analytics.com/analytics.js https://connect.facebook.net/en_US/fbevents.js https://www.google.com/recaptcha/api.js https://www.gstatic.com/recaptcha/releases/ 'report-sample'",
           'style-src': "'self' 'unsafe-inline' 'report-sample'",
           'worker-src': "'self'",
         },
