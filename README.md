@@ -9,6 +9,8 @@
   Gatsby 3 Starter Climate
 </h1>
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/rodneylab/gatsby-starter-climate)
+
 Boilerplate code for a <a aria-label="Vist the Gatsby website" href="https://www.gatsbyjs.org" rel="nofollow">Gatsby 3</a> blog using <a aria-label="Vist the Gatsby website" href="https://www.netlify.com/" rel="nofollow">Netlify</a> for hosting. Based on principles of:
 
 - Accessibility
