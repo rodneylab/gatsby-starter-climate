@@ -11,11 +11,11 @@ const sha256 = require('crypto-js/sha256');
 const Base64 = require('crypto-js/enc-base64');
 
 const PUBLIC_FOLDER = path.join(__dirname, 'public');
-const OUTPUT_FILE = path.join(PUBLIC_FOLDER, '_headers.json');
+const OUTPUT_FILE = path.join(PUBLIC_FOLDER, '_headers');
 
 const removeCspMeta = (inputFile) => {
   const fileContents = fs.readFileSync(inputFile, { encoding: 'utf-8' });
-  const regex = /<meta http-equiv="Content-Security-Policy"[^>]+(\/)?>/gi;
+  const regex = /<meta httpequiv="Content-Security-Policy"[^>]+(\/)?>/gi;
   const newFileContents = fileContents.replace(regex, '');
   fs.writeFileSync(inputFile, newFileContents, { encoding: 'utf-8' });
 };
@@ -36,10 +36,7 @@ function getCspContentFrom(inputFile) {
       {
         onopentag: (name, attributes) => {
           if (name === 'meta') {
-            if (
-              attributes['http-equiv'] &&
-              attributes['http-equiv'] === 'Content-Security-Policy'
-            ) {
+            if (attributes.httpequiv && attributes.httpequiv === 'Content-Security-Policy') {
               found = true;
               retVal = attributes.content;
             }

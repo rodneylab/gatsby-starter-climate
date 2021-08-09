@@ -17,7 +17,7 @@
     "mdx"
   ],
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build && node ./csp-util.js",
     "cypress:open": "cypress open",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
