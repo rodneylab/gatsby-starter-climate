@@ -5,6 +5,9 @@
     <img alt="Rodney Lab logo" src="https://rodneylab.com/assets/icon.png" width="60" />
   </a>
 </p>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/da1e88fb-4fbc-48a4-b8fa-7ca55800ab81/deploy-status)](https://app.netlify.com/sites/affectionate-keller-1a8489/deploys)
+
 <h1 align="center">
   Gatsby 3 Starter Climate
 </h1>
