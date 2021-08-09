@@ -26,7 +26,7 @@ Features:
 - 100% score of Lighthouse accessibility
 - No accessibility warning on axe check
 - High lighthouse speed scores
-- A or higher security rating for headers from securityheaders.com
+- A or higher <a aria-label="See demo site security header rating" href="https://securityheaders.com/?q=https%3A%2F%2Fgatsby-mdx-starter.rodneylab.com%2F&followRedirects=on">security rating for headers from securityheaders.com</a>
 - Correct use of semantic HTML (only one `<h1>` per page, sections and posts use `<section>` and `<article>` correctly etc.).
 
 ## 🚀 Quick start
@@ -117,7 +117,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby 3 pro
 
 15. **`LICENSE`**: This Gatsby 3 starter is licensed under the BSD-3-Clause license.
 
-16. **`netlify.toml`** This file contains configuration for Netlify builds. It includes an instruction to use the Netlify `netlify-plugin-gatsby-cache` plugin which helps improve build speed on Netlify. It also includes the custom build command, defined in `package.json`, which generates Netlify headers with CSP hashes.
+16. **`netlify.toml`** This file contains configuration for Netlify builds. It includes an instruction to use the Netlify `@netlify/plugin-gatsby` plugin which helps improve build speed on Netlify and adds support for <a aria-label="Read mroe about Gatsby Functions" href="https://rodneylab.com/gatsby-functions-netlify/">Gatsby Functions</a>. It also includes the custom build command, defined in `package.json`, which generates Netlify headers with CSP hashes.
 
 17. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
