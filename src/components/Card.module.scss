@@ -13,8 +13,10 @@
   margin: $spacing-6 auto;
   padding: $spacing-4;
 
-  h2 {
-    margin: $spacing-0 $spacing-2;
+  h2,
+  h3 {
+    margin-top: $spacing-0;
+    margin-bottom: $spacing-2;
   }
   p {
     font-size: $mobile-font-size-2;
